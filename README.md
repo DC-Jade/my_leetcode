@@ -26,7 +26,7 @@ git clone git@github.com:DC-Jade/my_leetcode.git
 g++ -Wall -g -o ../bin <.cpp>
 ```
 
-## [read_string_file.hpp](https://github.com/DC-Jade/my_leetcode/blob/main/include/read_string_file.hpp)
+## [read_string_file.hpp](./include/read_string_file.hpp)
 
 ```C
 /* this statement cannot initialize and pvec_str is a nullptr(0x0) */
