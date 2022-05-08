@@ -1,3 +1,5 @@
+#include <assert.h>
+
 #include <string>
 #include <vector>
 
@@ -29,6 +31,7 @@ string ReverseLeftWords(const string &s, const int &n) {
 void Test58() {
 	vector<string> vec_str;
 	int n = getchar() - '0';	/* need convert ASCII to int, or get ASCII value */
+	assert(n >= 0 && n <= 9);
 	string str, tmp;
 
 	ReadOrdinaryStringFile(&vec_str);
