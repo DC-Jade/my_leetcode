@@ -32,9 +32,10 @@ void Test58() {
 	vector<string> vec_str;
 	int n = getchar() - '0';	/* need convert ASCII to int, or get ASCII value */
 	assert(n >= 0 && n <= 9);
-	string str, tmp;
+	string str, tmp, data_path;
+	data_path = "../data/58_ordinary_string.txt";
 
-	ReadOrdinaryStringFile(&vec_str);
+	ReadOrdinaryStringFile(&vec_str, data_path.c_str());
 	for (auto str : vec_str) {
 		tmp = ReverseLeftWords(str, n);
 		printf("%s\n", tmp.c_str());
