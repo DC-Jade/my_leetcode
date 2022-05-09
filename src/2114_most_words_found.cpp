@@ -43,8 +43,9 @@ int CountMaxSpace(const vector<string> *pvec_str) {
 int Test2114() {
 	int count_max_space = 0;
 	int count_max = 1;
+	string data_path = "../data/58_ordinary_string.txt";
 	vector<string> vec_str;
-	ReadOrdinaryStringFile(&vec_str);
+	ReadOrdinaryStringFile(&vec_str, data_path.c_str());
 	count_max_space = CountMaxSpace(&vec_str);
 	count_max = count_max_space + 1;
 	printf("%d\n", count_max);

@@ -9,8 +9,9 @@
 using std::vector;
 using std::string;
 
-void ReadOrdinaryStringFile(vector<string> *pvec_str) {
-	std::ifstream file("../data/58_ordinary_string.txt");
+void ReadOrdinaryStringFile(vector<string> *pvec_str, const char *pstr) {
+	// std::ifstream file("../data/58_ordinary_string.txt");
+	std::ifstream file(pstr);
 	string str;
 	while (std::getline(file, str, '\n')) {
 		assert(pvec_str != nullptr);	
