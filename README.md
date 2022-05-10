@@ -34,3 +34,11 @@ g++ -Wall -g -o ../bin <.cpp>
 vector<string> *pvec_str;
 ```
 
+## [3_length_of_longet_substring.cpp](./src/3_length_of_longet_substring.cpp)
+
+```C
+/* hashmap can be used to boost search unique element */
+/* vector<int> vec(128, 0) can used as a special unordered_map<char, int>
+ * due to char is a number, between [0, 127] */ 
+```
+
