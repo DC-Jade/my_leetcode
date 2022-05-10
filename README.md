@@ -34,7 +34,7 @@ g++ -Wall -g -o ../bin <.cpp>
 vector<string> *pvec_str;
 ```
 
-## [3_length_of_longet_substring.cpp](./src/3_length_of_longet_substring.cpp)
+## [3_length_of_longest_substring.cpp](./src/3_length_of_longest_substring.cpp)
 
 ```C
 /* hashmap can be used to boost search unique element */
