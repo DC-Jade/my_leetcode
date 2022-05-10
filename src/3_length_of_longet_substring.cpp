@@ -2,11 +2,15 @@
 #include <assert.h>
 
 #include <string>
+#include <vector>
+#include <unordered_map>
 #include <ctime>
 #include <algorithm>
 
 
 using std::string;
+using std::vector;
+using std::unordered_map;
 
 
 int SolutionOne(const string &s);
@@ -14,17 +18,21 @@ int SolutionTwo(const string &s);
 int SolutionThree(const string &s);
 int SolutionFour(const string &s);
 int SolutionFive(const string &s);
+int SolutionSix(const string &s);
+int SolutionSeven(const string &s);
 int Solution(const string &s);
 
 int Solution(const string &s) {
 	srand(time(NULL));
-	int rand_int = rand() % 5;
+	int rand_int = rand() % 7;
 	switch (rand_int) {
 		case 0: return SolutionOne(s); break;
 		case 1: return SolutionTwo(s); break;
 		case 2: return SolutionThree(s); break;
 		case 3: return SolutionFour(s); break;
 		case 4: return SolutionFive(s); break;
+		case 5: return SolutionSix(s); break;
+		case 6: return SolutionSeven(s); break;
 	}
 	return 0;
 }
@@ -151,6 +159,47 @@ int SolutionFive(const string &s) {
 	}
 
 	printf("SolutionFive: %d\n", max_len);
+	return max_len;
+}
+
+/* TODO: hashmap to find pos */
+int SolutionSix(const string &s) {
+	int start = 0; int end = 0; int cur_len = 0; int max_len = 0;
+	int len = s.length();
+	unordered_map<char, int> hash;
+	char cur_char;
+	for (end = 0; end < len; ++end) {
+		cur_char = s[end];
+		if (hash.find(cur_char) != hash.end() && hash[cur_char] >= start) {
+			start = hash[cur_char] + 1;
+			cur_len = end - start;
+		}
+		hash[cur_char] = end;
+		++cur_len;
+		max_len = std::max(cur_len, max_len);
+	}
+	printf("SolutionSix: %d\n", max_len);
+	return max_len;
+}
+
+/* use ASCII vector to find pos */
+int SolutionSeven(const string &s) {
+	/* ascii vector */
+	vector<int> ascii_vec(128, -1); 
+	int start = 0; int end = 0; int cur_len = 0; int max_len = 0;
+	int len = s.length();
+	char cur_char;
+	for (end = 0; end < len; ++end) {
+		cur_char = s[end];
+		if (ascii_vec[cur_char] >= start) {
+			start = ascii_vec[cur_char] + 1;
+			cur_len = end - start;
+		}
+		++cur_len;
+		max_len = std::max(cur_len, max_len);
+		ascii_vec[cur_char] = end;
+	}
+	printf("SolutionSeven: %d\n", max_len);
 	return max_len;
 }
 

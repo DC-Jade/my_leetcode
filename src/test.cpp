@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 #include <string>
+#include <vector>
 #include <ctime>
 #include <algorithm>
 
 using std::string;
+using std::vector;
 
 void TestASCII() {
 	for (int i = 0; i < 128; ++i) {
@@ -54,10 +56,19 @@ void TestRand() {
 	}
 }
 
+void TestVector() {
+	vector<int> iv(128, -1);
+	for (int i : iv) {
+		printf("%d ", i);
+	}
+	printf("\n");
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
 	// TestStringFind();
 	// TestRand();
-	TestSearch();
+	// TestSearch();
+	TestVector();
 }
