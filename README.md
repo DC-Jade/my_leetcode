@@ -39,6 +39,14 @@ vector<string> *pvec_str;
 ```C
 /* hashmap can be used to boost search unique element */
 /* vector<int> vec(128, 0) can used as a special unordered_map<char, int>
- * due to char is a number, between [0, 127] */ 
+ * due to char is a number, between [0, 127]
+ */ 
 ```
+
+## Dynamic Programming, DP
+
+- Steps
+1. initial state
+2. dp function
+
 
