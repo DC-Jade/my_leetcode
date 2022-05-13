@@ -3,9 +3,10 @@
 
 #include <vector>
 
-#include "../include/print_ivv.hpp"
+#include "../include/ivv.hpp"
 
 using std::vector;
+using intvectorvector::PrintIVV;
 
 vector<vector<int>> SolutionOne(const int &n) {
 	/* should initialize with push_back, or have element is zero */
