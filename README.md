@@ -43,10 +43,28 @@ vector<string> *pvec_str;
  */ 
 ```
 
-## Dynamic Programming, DP
+## Recursion
+
+- Core
+	Top-Down
 
 - Steps
-1. initial state
+
+- Examples
+	
+	[00509_fibonacci](src/00509_fibonacci.cpp)
+	
+## Dynamic Programming, DP
+	
+- Core
+	Bottom-Up
+
+- Steps
+1. base case, or initial state
 2. dp function
+
+- Examples
+
+	[00509_fibonacci](src/00509_fibonacci.cpp)
 
 
