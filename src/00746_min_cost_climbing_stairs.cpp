@@ -7,22 +7,22 @@ using std::vector;
 
 int MinCostClimbingStairs(vector<int> &cost);
 
-/* TODO: DP */
+/* DP */
 int SolutionOne(vector<int> &cost) {
 	int len = cost.size();
 	int res = 0;
-	vector<int> iv(len, 0);
+	vector<int> iv(len + 1, 0);
 	
 	/* base case */
-	iv[0] = cost[0];
-	iv[1] = cost[1];
+	iv[0] = 0;
+	iv[1] = 0;
 
-	for (int i = 2; i < len; ++i) {
+	for (int i = 2; i < len + 1; ++i) {
 		assert(&(iv[i - 2]) != nullptr);
-		iv[i] = std::min(iv[i - 1] + cost[i], iv[i - 2]);
+		iv[i] = std::min(iv[i - 1] + cost[i - 1], iv[i - 2] + cost[i - 2]);
 	}
-	// assert(&(iv[len - 1]) != nullptr);
-	res = std::min(iv[len - 1], iv[len - 2]);
+	assert(&(iv[len]) != nullptr);
+	res = iv[len];
 	printf("%d\n", res);
 	return res;
 }

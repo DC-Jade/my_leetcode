@@ -7,16 +7,6 @@
 using std::vector;
 
 int MaxSubArray(vector<int> &nums);
-int Solution(const vector<int> &numes);
-int SolutionOne(const vector<int> &nums);
-
-int Solution(const vector<int> &nums) {
-	srand(time(NULL));
-	int rand_int = rand() % 1 + 1;
-	switch (rand_int) {
-		case 1: return SolutionOne(nums); break;
-	}
-}
 
 /* brute-fore, so slow */
 int SolutionOne(const vector<int> &nums) {
@@ -35,9 +25,27 @@ int SolutionOne(const vector<int> &nums) {
 	return max_sum;
 }
 
-/* TODO */
+/* DP */
 int SolutionTwo(const vector<int> &nums) {
+	int size = nums.size();
+	int max_sum = nums[0];
+	int cur_sum = 0;
+	for (int i = 0; i < size; ++i) {
+		cur_sum = std::max(cur_sum + nums[i], nums[i]);
+		max_sum = std::max(max_sum, cur_sum);
+	}
+	printf("SolutionTwo: %d\n", max_sum);
+	return max_sum;
+}
 
+int Solution(const vector<int> &nums) {
+	srand(time(NULL));
+	int rand_int = rand() % 2 + 1;
+	switch (rand_int) {
+		case 1: return SolutionOne(nums); break;
+		case 2: return SolutionTwo(nums); break;
+	}
+	return -1;
 }
 
 void Test53() {
