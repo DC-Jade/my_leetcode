@@ -80,4 +80,4 @@ i & 1;
 ```
 - Examples
 
-	[00409_longest_palindrome](../src/00409_longest_palindrome.cpp)
+	[00409_longest_palindrome](src/00409_longest_palindrome.cpp)
