@@ -67,9 +67,9 @@ vector<string> *pvec_str;
 
 	[00509_fibonacci](src/00509_fibonacci.cpp)
 
-- Trick
+## Trick
 
-- IsEven or IsOdd
+1. IsEven or IsOdd
 
 ```C
 int i = 0;
