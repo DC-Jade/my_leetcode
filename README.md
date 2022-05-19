@@ -67,4 +67,17 @@ vector<string> *pvec_str;
 
 	[00509_fibonacci](src/00509_fibonacci.cpp)
 
+- Trick
 
+- IsEven or IsOdd
+
+```C
+int i = 0;
+// True when even
+i & 0;  
+// True when odd
+i & 1;	
+```
+- Examples
+
+	[00409_longest_palindrome](../src/00409_longest_palindrome.cpp)
