@@ -1,6 +1,6 @@
-#include <stdio.h>
 
 #include <string>
+#include <cstdlib>
 #include <vector>
 #include <ctime>
 #include <algorithm>
@@ -64,11 +64,25 @@ void TestVector() {
 	printf("\n");
 }
 
+inline void TestInline() {
+	int n = 0;
+	printf("%d\n", n);
+	printf("end of TestInline\n");
+}
+
+void TestNonInline() {
+	int n = 0;
+	printf("%d\n", n);
+	printf("end of TestNonInline\n");
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
 	// TestStringFind();
 	// TestRand();
 	// TestSearch();
-	TestVector();
+	// TestVector();
+	// TestInline();
+	TestNonInline();
 }
