@@ -76,6 +76,14 @@ void TestNonInline() {
 	printf("end of TestNonInline\n");
 }
 
+void TestFlip() {
+	int i = 0; int j = 1;
+	int flip_i = ~i;
+	int flip_j = ~j;
+	printf("~%d = %d\n", i, flip_i);
+	printf("~%d = %d\n", j, flip_j);
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -84,5 +92,6 @@ int main() {
 	// TestSearch();
 	// TestVector();
 	// TestInline();
-	TestNonInline();
+	// TestNonInline();
+	TestFlip();
 }
