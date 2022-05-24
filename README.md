@@ -71,7 +71,7 @@ vector<string> *pvec_str;
 
 1. IsEven or IsOdd
 
-```C
+```C++
 int i = 0;
 // True when even
 i & 0;  
@@ -81,3 +81,23 @@ i & 1;
 - Examples
 
 	[00409_longest_palindrome](src/00409_longest_palindrome.cpp)
+
+2. Use unordered_map check element whether occured
+	- hashtale.find();
+	- hashtale.count();
+	- hashtale.erase();
+
+```C++
+std::unordered_map<int, int> hashtable;
+vector<int> iv = {1, 2, 3, 2, 4, 2, 0, 1, 2, 3};
+int size = iv.size();
+// save {value, index}
+for (int i = 0; i < size; ++i) {
+  if (hashtable.count(iv[i]) == 1) {
+    printf("found %d\n", iv[i]);
+    printf("index %d\n", hashtable.find(iv[i])->second);
+  }
+  hashtable[iv[i]] = i;
+}
+printf("not found\n");
+```

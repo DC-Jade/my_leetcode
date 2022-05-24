@@ -1,12 +1,14 @@
 
 #include <string>
 #include <cstdlib>
-#include <vector>
 #include <ctime>
 #include <algorithm>
+#include <vector>
+#include <unordered_map>
 
 using std::string;
 using std::vector;
+using std::unordered_map;
 
 void TestASCII() {
 	for (int i = 0; i < 128; ++i) {
@@ -84,6 +86,21 @@ void TestFlip() {
 	printf("~%d = %d\n", j, flip_j);
 }
 
+void TestHashtable() {
+	unordered_map<int, int> hashtable;
+	vector<int> iv = {1, 2, 3, 2, 4, 2, 0, 1, 2, 3};
+	int size = iv.size();
+	// save {value, index}
+	for (int i = 0; i < size; ++i) {
+		if (hashtable.count(iv[i]) == 1) {
+		  printf("found %d\n", iv[i]);
+		  printf("index %d\n", hashtable.find(iv[i])->second);
+		}
+		hashtable[iv[i]] = i;
+	}
+	printf("not found\n");
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -93,5 +110,6 @@ int main() {
 	// TestVector();
 	// TestInline();
 	// TestNonInline();
-	TestFlip();
+	// TestFlip();
+	TestHashtable();
 }

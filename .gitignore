@@ -33,4 +33,4 @@
 bin/**
 
 # test files
-./src/*test*
+src/test.cpp
