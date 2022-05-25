@@ -101,6 +101,22 @@ void TestHashtable() {
 	printf("not found\n");
 }
 
+void TestChar2String() {
+	vector<string> sv;
+	vector<char> cv;
+	int i = 0;
+	int char_size = 26;
+	string tmp;
+	for (int i = 0; i < char_size; ++i) {
+		cv.push_back(i + 'a');
+		tmp.push_back(i + 'a');
+		sv.push_back(tmp);
+		tmp.erase();
+		printf("%c %s ", cv.back(), sv.back().c_str());
+	}
+	printf("\n");
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -111,5 +127,6 @@ int main() {
 	// TestInline();
 	// TestNonInline();
 	// TestFlip();
-	TestHashtable();
+	// TestHashtable();
+	TestChar2String();
 }
