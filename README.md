@@ -28,7 +28,7 @@ g++ -Wall -g -o ../bin <.cpp>
 
 ## [read_string_file.hpp](./include/read_string_file.hpp)
 
-```C
+```cpp
 /* this statement cannot initialize and pvec_str is a nullptr(0x0) */
 /* so will throw segmention fault */
 vector<string> *pvec_str;
@@ -36,7 +36,7 @@ vector<string> *pvec_str;
 
 ## [3_length_of_longest_substring.cpp](./src/3_length_of_longest_substring.cpp)
 
-```C
+```cpp
 /* hashmap can be used to boost search unique element */
 /* vector<int> vec(128, 0) can used as a special unordered_map<char, int>
  * due to char is a number, between [0, 127]
@@ -53,9 +53,8 @@ vector<string> *pvec_str;
 - Examples
 	
 	[00509_fibonacci](src/00509_fibonacci.cpp)
-	
 ## Dynamic Programming, DP
-	
+
 - Core
 	Bottom-Up
 
@@ -82,7 +81,10 @@ i & 1;
 
 	[00409_longest_palindrome](src/00409_longest_palindrome.cpp)
 
-2. Use unordered_map check element whether occured
+2. Use unordered_map check element whether exist and count recurrence
+	
+	- unordered_map can save {key, value} pair and key is unique
+	
 	- hashtale.find();
 	- hashtale.count();
 	- hashtale.erase();
@@ -101,3 +103,25 @@ for (int i = 0; i < size; ++i) {
 }
 printf("not found\n");
 ```
+
+3. unordered_set used to check element whether exists
+   - unordered_set only save unique value {value}, more space efficient than map
+
+   - hash.count();
+
+   - examples
+
+     [00819_most_common_word.cpp](src/00819_most_common_word.cpp)
+
+```cpp
+std::unordered_set<string> hash_set;
+hash_set.push_back("hello");
+hash_set.push_back("world");
+if (hash_set.count("hello")) printf("find\n");
+else printf("not found\n");
+```
+
+
+
+
+
