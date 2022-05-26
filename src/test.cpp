@@ -117,6 +117,38 @@ void TestChar2String() {
 	printf("\n");
 }
 
+
+void f(int * pArr)
+{
+  * pArr = 200 ;
+  free(pArr);//把pArr 所指向的内存释放掉
+}
+
+
+void TestFree() {
+  int * p = (int *)malloc(sizeof(int));
+  *p = 10;
+
+  printf("%d\n",*p); //10
+  f(p);    
+	*p = 100;
+	free(p);
+	// int q = 0x1d88c20;
+  printf("%d\n",*p); //200
+  // printf("%d\n",q); //200
+  printf("%p\n",p); //200
+}
+
+void TestMapIteration() {
+	unordered_map<string, int> cnt = {
+		{"hello", 1}, {"world", 2},
+		{"xxx", 4}, {"yyyy", 3}
+	};
+	for (auto it = cnt.begin(); it != cnt.end(); ++it) {
+		printf("word: %s count %d\n", it->first.c_str(), it->second);
+	}
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -128,5 +160,7 @@ int main() {
 	// TestNonInline();
 	// TestFlip();
 	// TestHashtable();
-	TestChar2String();
+	// TestChar2String();
+	// TestFree();
+	TestMapIteration();
 }
