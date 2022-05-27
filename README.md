@@ -86,8 +86,18 @@ i & 1;
 	- unordered_map can save {key, value} pair and key is unique
 	
 	- hashtale.find();
+	
 	- hashtale.count();
+	
+	  **check key whether exist**
+	
 	- hashtale.erase();
+	
+	- **replace hashtable[] with hashtable.at() **
+	
+	  at() and [ ] has the same behavior when an element with the key exists
+	
+	  **[] will insert when key not exist,** but at will throw exception
 
 ```C++
 std::unordered_map<int, int> hashtable;
