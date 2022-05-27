@@ -100,7 +100,7 @@ void TestHashtable() {
 	}
 	printf("not found\n");
 
-	/* test operator[] */
+	/* test operator[] , when key not exist, will insert*/
 	unordered_map<int, int> cnt = {
 		{1, 1}, {2, 2}, {3, 3}
 	};
@@ -114,6 +114,9 @@ void TestHashtable() {
 
 	if (cnt.count(not_exist)) printf("second found = %d\n", cnt[not_exist]);
 	else printf("second not found\n");
+
+	not_exist = 5;
+	if (cnt.at(not_exist)) printf("not exist and throw exception\n");
 }
 
 void TestChar2String() {
