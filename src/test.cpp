@@ -99,6 +99,21 @@ void TestHashtable() {
 		hashtable[iv[i]] = i;
 	}
 	printf("not found\n");
+
+	/* test operator[] */
+	unordered_map<int, int> cnt = {
+		{1, 1}, {2, 2}, {3, 3}
+	};
+	int not_exist = 4;
+	if (cnt[not_exist]) printf("first found = %d\n", cnt[not_exist]);
+	else printf("first not found\n");
+	for (auto it = cnt.begin(); it != cnt.end(); ++it) { 
+		printf("%d : %d ", it->first, it->second);
+	}
+	printf("\n");
+
+	if (cnt.count(not_exist)) printf("second found = %d\n", cnt[not_exist]);
+	else printf("second not found\n");
 }
 
 void TestChar2String() {
@@ -149,6 +164,11 @@ void TestMapIteration() {
 	}
 }
 
+void TestReturn() {
+	int i = 1;
+	return;
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -159,8 +179,9 @@ int main() {
 	// TestInline();
 	// TestNonInline();
 	// TestFlip();
-	// TestHashtable();
+	TestHashtable();
 	// TestChar2String();
 	// TestFree();
-	TestMapIteration();
+	// TestMapIteration();
+	// TestReturn();
 }
