@@ -172,6 +172,12 @@ void TestReturn() {
 	return;
 }
 
+void TestChar() {
+	char c = 'a';
+	c = 'b';
+	printf("%c\n", c);
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -182,9 +188,10 @@ int main() {
 	// TestInline();
 	// TestNonInline();
 	// TestFlip();
-	TestHashtable();
+	// TestHashtable();
 	// TestChar2String();
 	// TestFree();
 	// TestMapIteration();
 	// TestReturn();
+	TestChar();
 }

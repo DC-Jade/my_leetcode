@@ -13,13 +13,13 @@ vector<int> Soultion(vector<int> &nums);
 
 /* greedy */
 bool Compare(const int &lhs, const int &rhs) {
-	return lhs >= rhs;
+	return lhs > rhs;
 }
 
 vector<int> SolutionOne(vector<int> &nums) {
 	// std::sort(nums.begin(), nums.end(), Compare);
 	std::sort(nums.begin(), nums.end(), [] (int x, int y) {
-		return x >= y;
+		return x > y;
   });
 
 	int left = 0;
