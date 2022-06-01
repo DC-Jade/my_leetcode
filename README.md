@@ -150,5 +150,16 @@ int left = x ^ (-x);
 
 ![Brain Kernighan algorithm](https://assets.leetcode-cn.com/solution-static/461/3.png)
 
+5. get bit reverse
 
+   - example
+
+     [01009_bitwise_complement.cpp](src/01009_bitwise_complement.cpp)
+
+   ```cpp
+   // 1. get high bit firstly
+   // 2. use mask get bit reverse 
+   ```
+
+   
 
