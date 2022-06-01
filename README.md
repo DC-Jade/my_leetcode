@@ -131,7 +131,24 @@ if (hash_set.count("hello")) printf("find\n");
 else printf("not found\n");
 ```
 
+4. Bit Operation - *Brain Kernighan algorithm*
 
+   - remove the lowset bit 1
+
+   - example
+
+     [00231_hammin_distance.cpp](src/00231_hammin_distance.cpp)
+
+     [00461_hammin_distance.cpp](src/00461_hammin_distance.cpp)
+
+```cpp
+int x = 10;
+// remove the lowest bit 1
+int left = x ^ (x - 1);
+int left = x ^ (-x);
+```
+
+![Brain Kernighan algorithm](https://assets.leetcode-cn.com/solution-static/461/3.png)
 
 
 
