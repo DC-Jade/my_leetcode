@@ -185,7 +185,7 @@ int main() {
 	// TestRand();
 	// TestSearch();
 	// TestVector();
-	// TestInline();
+	TestInline();
 	// TestNonInline();
 	// TestFlip();
 	// TestHashtable();
@@ -193,5 +193,5 @@ int main() {
 	// TestFree();
 	// TestMapIteration();
 	// TestReturn();
-	TestChar();
+	// TestChar();
 }
