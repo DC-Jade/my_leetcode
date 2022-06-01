@@ -198,6 +198,13 @@ void TestBitset() {
 	printf("%lld\n", bs3.to_ullong());
 }
 
+void TestBitReverse() {
+	int n = 1;
+	/* wrong */
+	n = ~n;
+	printf("%d\n", n);
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -214,5 +221,6 @@ int main() {
 	// TestMapIteration();
 	// TestReturn();
 	// TestChar();
-	TestBitset();
+	// TestBitset();
+	TestBitReverse();
 }
