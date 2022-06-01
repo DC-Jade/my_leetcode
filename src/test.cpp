@@ -185,10 +185,24 @@ void TestChar() {
 void TestBitset() {
 	bitset<4> bs;
 	bs.set();
-	bs.set(0, 0);
-	bs.set(2, 0);
+	bs.set(1, 0);
+	bs.set(3, 0);
+	bitset<4> bs2;
+	bs2.set();
+	bs2.set(0, 0);
+	bs2.set(2, 0);
+	bitset<4> bs3 = bs ^ bs2;
 	printf("%s\n", bs.to_string().c_str());
 	printf("%lld\n", bs.to_ullong());
+	printf("%s\n", bs3.to_string().c_str());
+	printf("%lld\n", bs3.to_ullong());
+}
+
+void TestBitReverse() {
+	int n = 1;
+	/* wrong */
+	n = ~n;
+	printf("%d\n", n);
 }
 
 int main() {
@@ -207,5 +221,6 @@ int main() {
 	// TestMapIteration();
 	// TestReturn();
 	// TestChar();
-	TestBitset();
+	// TestBitset();
+	TestBitReverse();
 }
