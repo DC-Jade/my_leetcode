@@ -9,7 +9,7 @@ bool Solution(int n);
 bool SolutionOne(int n) {
 	int tmp = n ^ (n >> 1);
 	// return (((n ^ (n >> 1)) + 1) == 0);
-	return (tmp & (tmp + 1) == 0);
+	return (tmp & (tmp + 1)) == 0;
 }
 
 // bool SolutionTwo(int n) {
