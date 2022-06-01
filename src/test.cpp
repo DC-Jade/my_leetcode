@@ -3,11 +3,15 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+
 #include <vector>
+#include <string>
 #include <unordered_map>
+#include <bitset>
 
 using std::string;
 using std::vector;
+using std::bitset;
 using std::unordered_map;
 
 void TestASCII() {
@@ -178,6 +182,15 @@ void TestChar() {
 	printf("%c\n", c);
 }
 
+void TestBitset() {
+	bitset<4> bs;
+	bs.set();
+	bs.set(0, 0);
+	bs.set(2, 0);
+	printf("%s\n", bs.to_string().c_str());
+	printf("%lld\n", bs.to_ullong());
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -185,7 +198,7 @@ int main() {
 	// TestRand();
 	// TestSearch();
 	// TestVector();
-	TestInline();
+	// TestInline();
 	// TestNonInline();
 	// TestFlip();
 	// TestHashtable();
@@ -194,4 +207,5 @@ int main() {
 	// TestMapIteration();
 	// TestReturn();
 	// TestChar();
+	TestBitset();
 }
