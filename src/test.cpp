@@ -205,6 +205,39 @@ void TestBitReverse() {
 	printf("%d\n", n);
 }
 
+void TestStack() {
+	long local;
+	printf("local at %p\n", &local);
+	// return 0;
+}
+
+void PassRefernce(int &ri) {
+	int *ri_address = &ri;
+	printf("%p\n", ri_address);
+}
+
+void TestReference() {
+	int n = 1;
+	PassRefernce(n);
+}
+
+void TestLoop() {
+	int size = 100;
+	for (int i = 0; i < size; ++i) {
+		for (int k = 10; k < size; ++k) {
+			++k;
+			++k;
+			if (k & 0) break;
+			printf("%d\t", k);
+		}
+		/* break from this line */
+		if (i & 1) continue;
+		++i;
+		++i;
+		/* continue from this line */
+	}
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -222,5 +255,8 @@ int main() {
 	// TestReturn();
 	// TestChar();
 	// TestBitset();
-	TestBitReverse();
+	// TestBitReverse();
+	// TestStack();
+	// TestReference();
+	TestLoop();
 }
