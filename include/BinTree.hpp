@@ -79,7 +79,7 @@ template <typename T>
 BinTree<T>::BinTree() : _size(0), _root(nullptr) { }
 
 template <typename T>
-BinTree<T>::~BinTree() { if (_size > 0) Remove(_root); printf("~BinTree()\n"); }
+BinTree<T>::~BinTree() { if (_size > 0) Remove(_root); printf("\n~BinTree()"); }
 
 template <typename T>
 int BinTree<T>::Remove(TreeNode<T> *pbin_node) {
