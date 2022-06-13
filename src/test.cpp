@@ -238,6 +238,12 @@ void TestLoop() {
 	}
 }
 
+void TestReverseString() {
+	string s = "12345";
+	string s_rev(s.rbegin(), s.rend());
+	printf("%s\n", s_rev.c_str());
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -258,5 +264,6 @@ int main() {
 	// TestBitReverse();
 	// TestStack();
 	// TestReference();
-	TestLoop();
+	// TestLoop();
+	TestReverseString();
 }
