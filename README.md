@@ -161,5 +161,17 @@ int left = x ^ (-x);
    // 2. use mask get bit reverse 
    ```
 
-   
 
+6. Reverse string by reverse iterator
+
+   - example
+
+     [00125_is_palindrome.cpp](src/0000125_is_palindrome.cpp)
+
+   ```cpp
+   string s = "12345";
+   string s_rev(s.rbegin(), s.rend());
+   /* s_rev - "54321" */
+   ```
+
+   
