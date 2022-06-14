@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <thread>
 #include <algorithm>
 
 #include <vector>
@@ -244,6 +245,29 @@ void TestReverseString() {
 	printf("%s\n", s_rev.c_str());
 }
 
+int globalVariable = 0;
+
+void Task1() {
+	int n = 1000000;
+	for (int i = 0; i < n; ++i) {
+		globalVariable++;
+		globalVariable--;
+	}
+}
+
+void TestThread() {
+	std::thread t1(Task1);
+	std::thread t2(Task1);
+	t1.join();
+	t2.join();
+	printf("globalVariable = %d\n", globalVariable);
+}
+
+void TestDivide() {
+	int n = 701;
+	printf("%d\n", n / 26);
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -265,5 +289,7 @@ int main() {
 	// TestStack();
 	// TestReference();
 	// TestLoop();
-	TestReverseString();
+	// TestReverseString();
+	// TestThread();
+	TestDivide();
 }
