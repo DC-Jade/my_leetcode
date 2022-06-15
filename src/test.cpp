@@ -268,6 +268,13 @@ void TestDivide() {
 	printf("%d\n", n / 26);
 }
 
+void TestStr2Ch() {
+	char ch = 'd';
+	string str = "abc";
+	str += ch;
+	printf("%s\n", str.c_str());
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -291,5 +298,6 @@ int main() {
 	// TestLoop();
 	// TestReverseString();
 	// TestThread();
-	TestDivide();
+	// TestDivide();
+	TestStr2Ch();
 }
