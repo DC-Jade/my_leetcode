@@ -275,6 +275,20 @@ void TestStr2Ch() {
 	printf("%s\n", str.c_str());
 }
 
+int Product(const int &base, const int &n) {
+	while (--n) {
+		base *= base;
+	}
+	return base;
+}
+
+void TestConstReference() {
+	int base = 10;
+	int n = 3;
+	int res = Product(base, n);
+	printf("%d\n", res);
+}
+
 int main() {
 	// TestASCII();
 	// TestStringAssign();
@@ -299,5 +313,6 @@ int main() {
 	// TestReverseString();
 	// TestThread();
 	// TestDivide();
-	TestStr2Ch();
+	// TestStr2Ch();
+	TestConstReference();
 }
