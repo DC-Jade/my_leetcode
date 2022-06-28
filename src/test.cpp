@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include <thread>
+// #include <thread>
 #include <algorithm>
 
 #include <vector>
@@ -255,13 +255,13 @@ void Task1() {
 	}
 }
 
-void TestThread() {
-	std::thread t1(Task1);
-	std::thread t2(Task1);
-	t1.join();
-	t2.join();
-	printf("globalVariable = %d\n", globalVariable);
-}
+// void TestThread() {
+//   std::thread t1(Task1);
+//   std::thread t2(Task1);
+//   t1.join();
+//   t2.join();
+//   printf("globalVariable = %d\n", globalVariable);
+// }
 
 void TestDivide() {
 	int n = 701;
@@ -275,7 +275,7 @@ void TestStr2Ch() {
 	printf("%s\n", str.c_str());
 }
 
-int Product(const int &base, const int &n) {
+int Product(int base, int n) {
 	while (--n) {
 		base *= base;
 	}
@@ -287,6 +287,29 @@ void TestConstReference() {
 	int n = 3;
 	int res = Product(base, n);
 	printf("%d\n", res);
+}
+
+void TestReferenceMoveConstructible() {
+	int a = 1;
+	int &ra = a;
+	std::is_nothrow_move_constructible<int&>::value ? printf("true\n") :
+		printf("false\n");
+	std::is_nothrow_move_constructible<int*>::value ? printf("true\n") :
+		printf("false\n");
+}
+
+void TestVectorReference() {
+	// vector<int&> riv;
+	int a = 1;
+	int &ra = a;
+	printf("%p\n", &a);
+	printf("%p\n", &ra);
+	*(&ra) = 2;
+	printf("%d\n", ra);
+	int *pra = &ra;
+	*pra = 3;
+	printf("%d\n", ra);
+	// riv.push_back(ra);
 }
 
 int main() {
@@ -314,5 +337,7 @@ int main() {
 	// TestThread();
 	// TestDivide();
 	// TestStr2Ch();
-	TestConstReference();
+	// TestConstReference();
+	// TestReferenceMoveConstructible();
+	TestVectorReference();
 }
